@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC>
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Math Editor v1.0</title>
+        <link href="assets/css/MathEditor.css" rel="stylesheet" />
+        <link href="assets/js/jquery-easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+        <link href="assets/js/jquery-easyui/themes/icon.css" rel="stylesheet" />
+        <link href="assets/js/mathquill/mathquill.css" rel="stylesheet" />
+    </head>
+    <body class="easyui-layout">     
+        <div data-options="region:'north', collapsible: false" style="height:28px;">
+            <a href="javascript:void(0)" id="mbFile" class="easyui-menubutton"  data-options="menu:'#mmFile',iconCls:'icon-page'">File</a>
+            <div id="mmFile" style="width:150px;">
+                <div data-options="iconCls:'icon-page-copy'">New Formula</div>
+                <div class="menu-sep"></div>
+                <div data-options="iconCls:'icon-page-save'">Save</div>
+                <div class="menu-sep"></div>
+                <div data-options="iconCls:'icon-remove'">Exit</div>
+            </div>
+        </div>
+        <div data-options="region:'south',title:''" style="text-align:right; padding: 5 5 0 0; height:35px;">
+            <a class="easyui-linkbutton" title="Save Formula" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="javascript:alert('ok')">Ok</a>
+            <a class="easyui-linkbutton" title="Cancel Editor" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="javascript:alert('cancel')">Cancel</a>
+        </div>
+        <div data-options="region:'east',title:'Formulas',collapsible: true,iconCls:'icon-square_root', border:false" style="width:200px;">
+            <div id="aaFormulas" class="easyui-accordion" data-options="border: false, fit: true">
+                <div title="<span>$\pm$ &nbsp;&nbsp; $\times$  &nbsp;&nbsp; $\div$</span>" data-options="border: false" style="overflow:auto;padding:10px" id="OPERATOR_SYMBOLS"></div>
+                <div title="<span>$\leq$ &nbsp;&nbsp; $\cong$ &nbsp;&nbsp; $\approx$</span>" data-options="border: false" style="overflow:auto;padding:10px" id="RELATION_SYMBOLS"></div>
+                <div title="<span>$\infty$ &nbsp;&nbsp; $\subseteq$ &nbsp;&nbsp; $\in$</span>" style="overflow:auto;" id="GROUP_LOGICAL_SYMBOLS"></div>
+                <div title="<span>$\prec$ &nbsp;&nbsp; $\asymp$ &nbsp;&nbsp; $\measuredangle$</span>" style="overflow:auto;" id="LOGICAL_SYMBOLS"></div>
+                <div title="<span>$\Rightarrow$ &nbsp;&nbsp; $\circlearrowleft$ &nbsp;&nbsp; $\looparrowright$</span>" style="overflow:auto;" id="ARROW_SYMBOLS"></div>
+                <div title="<span>$A \xrightleftharpoons{} B \xleftrightarrow{} C$</span>" style="overflow:auto;" id="ARROW_RELATION_SYMBOLS"></div>
+                <div title="<span>$\hbar$ &nbsp;&nbsp; $\mho$ &nbsp;&nbsp; $\backepsilon$</span>" style="overflow:auto;" id="MATH_PHYSIC_SYMBOLS"></div>
+                <div title="<span>$\varepsilon$ &nbsp;&nbsp; $\pi$  &nbsp;&nbsp; $\Psi$ </span>" style="overflow:auto;" id="L_U_GREEK_CHAR"></div>
+                <div title="<span>$\vec{a}$ &nbsp;&nbsp; $x_b$ &nbsp;&nbsp; $\dot{y}$ </span>" style="overflow:auto;" id="SUB_SUP_SYMBOLS"></div>
+                <div title="<span>$a/b$ &nbsp;&nbsp; $\sqrt{a}$ </span>" style="overflow:auto;" id="SQRT_FRAC_SYMBOLS"></div>
+                <div title="<span>$\partial$ &nbsp;&nbsp; $\nabla a$ &nbsp;&nbsp; $dx$ </span>" style="overflow:auto;" id="DIFFERENTIAL_SYMBOLS"></div>
+                <div title="<span style='font-size:60%;'>$\int$ &nbsp;&nbsp; $\oint$</span>" style="overflow:auto;" id="INTEGRAL_SYMBOLS"></div>
+                <div title="<span style='font-size:70%;'>$\sum$ &nbsp;&nbsp; $\prod$ </span>" style="overflow:auto;" id="SUM_PROD_SYMBOLS"></div>
+                <div title="<span><img class='symbol_btn icon-matrix_13_black'  width='15' height='20' />  &nbsp;&nbsp; <img class='symbol_btn icon-matrix_33_black' width='15' height='20' /></span>" style="overflow:auto;" id="MATRIX_SYMBOLS"></div>
+                <div title="<span>$(\ )$ &nbsp;&nbsp; $[\ \ ]$ &nbsp;&nbsp; $\|\ \|$ </span>" style="overflow:auto;" id="BRACKET_SYMBOLS"></div>
+                <div title="<span>$\ln$ &nbsp;&nbsp; $\cos$ &nbsp;&nbsp; $\lim$ </span>" style="overflow:auto;" id="FONCTION_SYMBOLS"></div>
+
+            </div>
+        </div>
+        <div  data-options="region:'center',title:'Editor',tools:'#ttEditorTools'" style="padding:5px;background:#eee;">
+            <div class="easyui-layout" data-options="fit:true">
+                <div data-options="region:'center'">
+                    <span id="editable-math" class="mathquill-editable"></span>
+                </div>
+                <div data-options="region:'south', title:'Formula Notation'" style="height:100px">
+                    <textarea id="latex-source"></textarea>
+                </div>
+            </div>
+            <div id="ttEditorTools">
+	            <a href="#" class="icon-magnifier_zoom_in" Title="Formula Zoom In" onclick="javascript:alert('Zoom In')"></a>
+	            <a href="#" class="icon-magifier_zoom_out" Title="Formula Zoom Out" onclick="javascript:alert('Zoom Out')"></a>
+            </div>
+        </div>
+        <script src="assets/js/jquery/jquery.min.js"></script>
+        <script src="assets/js/jquery-easyui/jquery.easyui.min.js"></script>
+        <script src="assets/js/mathquill/mathquill.js"></script>
+        <script src="assets/js/MathEditor.js"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript"
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>        
+    </body>
+</html>

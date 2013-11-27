@@ -1,0 +1,42 @@
+﻿html, body 
+{
+    min-height: 100%;
+}
+
+#page { 
+    min-height: 90%; 
+    position: relative;
+    overflow: hidden;
+}
+
+.MathEditor-Formulas {
+    width:100px;
+}
+
+#editable-math {
+    width: 99%;
+    height: 99%
+}
+
+#latex-source {
+    width: 99%;
+    height: 85%
+}
+
+
+a.s {
+    display: block;
+    border: 1px solid transparent;
+    padding: 4px;
+    color: #000000;
+    font-size: 100%;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.s{display:block;border:1px solid transparent;padding:4px;color:#000000;font-size:100%;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;border-radius:5px;text-decoration:none;text-align:center;}
+a.s:hover{border:1px solid #7eabcd;background-color:#eaf2ff;}
