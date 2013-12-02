@@ -37,12 +37,12 @@
     display:inline-block;
   }
 
-    .hat-prefix {
+.mathquill-rendered-math .hat-prefix {
     display: block;
     text-align: center;
-    line-height: .15em;
-    margin-bottom: -0.35em;
-    font-size: 0.90em;
+    line-height: 1.25em;
+    margin-bottom: -.8em;
+    font-size: 1em;
   }
 
 .mathquill-editable .cursor {
