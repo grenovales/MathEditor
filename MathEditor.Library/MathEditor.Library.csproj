@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EFB36FEF-22D5-4D10-9AC5-1DFBAE8F6D22}</ProjectGuid>
+    <ProjectGuid>{0D1AC08D-3C87-4247-A87C-CDA19D2DDDE8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MathEditor.Library</RootNamespace>
@@ -44,6 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\lang\accessibility-en.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="common\" />
+    <Folder Include="interop\" />
+    <Folder Include="system\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
