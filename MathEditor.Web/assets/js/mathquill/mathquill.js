@@ -2466,6 +2466,7 @@ CharCmds['\\'] = P(MathCommand, function(_, _super) {
     if (!latex) latex = 'backslash';
     this.cursor.insertCmd(latex, this._replacedFragment);
   };
+ 
 });
 
 var Binomial =
@@ -2927,7 +2928,8 @@ LatexCmds.H = LatexCmds.Hamiltonian = LatexCmds.quaternions = LatexCmds.Quaterni
 
 //spacing
 LatexCmds.quad = LatexCmds.emsp = bind(VanillaSymbol,'\\quad ','    ');
-LatexCmds.qquad = bind(VanillaSymbol,'\\qquad ','        ');
+LatexCmds.qquad = bind(VanillaSymbol, '\\qquad ', '        ');
+LatexCmds['\,'] = LatexCmds.thinspace = bind(VanillaSymbol, '\\, ', ' ');
 /* spacing special characters, gonna have to implement this in LatexCommandInput::onText somehow
 case ',':
   return VanillaSymbol('\\, ',' ');

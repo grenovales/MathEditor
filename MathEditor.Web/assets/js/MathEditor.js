@@ -154,6 +154,5 @@ MathEditor.prototype = {
         setTimeout(function () {
             $('#editable-math').mathquill('latex', $('#latex-source').val());
         });
-    },
-    
+    }
 };
