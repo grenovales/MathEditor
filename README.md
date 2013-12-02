@@ -1,7 +1,10 @@
-MathEditor
-==========
-<<<<<<< HEAD
-=======
+MathEditor Pre-Alpha
 
-WYSIWYG MathEditor
->>>>>>> f0a8f039d92a857e49267cfa6ab1d536ce34a9fc
+
+This is the development of WYSIWG MathEditor
+
+We are using <a href='http://www.jeasyui.com' target='_blank'>Jquery EasyUI</a> for the main interface
+
+Modifed version of <a href='http://mathquill.com' target='blank'>MathQuill</a> to help with Math Editing
+
+

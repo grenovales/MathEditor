@@ -4,9 +4,6 @@ window.matheditor = matheditor;
 $(document).ready(function () {
     if (!matheditor) {
         matheditor = new MathEditor();
-        /*if (!vme.isBuild) {
-            $("body").html("VisualMathEditor Error. The editor does not load properly. You can try to refresh the page by pressing the F5 key.");
-        }*/
     }
 });
 
@@ -93,7 +90,7 @@ MathEditor.prototype = {
     },
     initializeLaTexSource: function () {
         var matheditor = this;
-        $('#latex-source').bind('keydown keypress ', function () {
+        $('#latex-source').bind('keydown keypress paste', function () {
             matheditor.SourceLaTexChange();
         });
     },
@@ -122,7 +119,8 @@ MathEditor.prototype = {
         return tree.join('').slice(1);
     },
     insert: function (b) {
-        $('#editable-math').mathquill('write',b)
+        $('#editable-math').mathquill('write', b);
+        this.EditableMathChange();
     },
     setFocus: function () {
         //if (!this.runNotCodeMirror && this.codeMirrorEditor) this.codeMirrorEditor.focus();
