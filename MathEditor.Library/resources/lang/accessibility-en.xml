@@ -1,4 +1,325 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <mathitems>
   <mathitem id="!" text="factorial" />
+  <mathitem id="'" text="apostrophe" />
+  <mathitem id="''" text="double apostrophe" />
+  <mathitem id="'''" text="triple apostrophe" />
+  <mathitem id="(" text="left parenthesis" />
+  <mathitem id=")" text="right parenthesis" />
+  <mathitem id="*" text="asterisk times" />
+  <mathitem id="+" text="plus" />
+  <mathitem id="," text="comma" />
+  <mathitem id="-" text="minus" />
+  <mathitem id="/" text="divided by" />
+  <mathitem id="&lt;" text="less than" />
+  <mathitem id="=" text="equal" />
+  <mathitem id="&gt;" text="greater than" />
+  <mathitem id="[" text="left square bracket" />
+  <mathitem id="\" text="backslash" />
+  <mathitem id="]" text="right square bracket" />
+  <mathitem id="^" text="hat" />
+  <mathitem id="accent1" text="${base} with ${over} on top" />
+  <mathitem id="accent2" text="stack ${base} with ${over} on top" />
+  <mathitem id="backspace" text="back space" />
+  <mathitem id="bevelled" text="bevelled" />
+  <mathitem id="bigop1" text="${operator} from ${from} to ${to} of" />
+  <mathitem id="bigop2" text="${operator} for ${index} of" />
+  <mathitem id="blank" text="blank" />
+  <mathitem id="bold" text="bold" />
+  <mathitem id="cell" text="cell ${content} end cell" />
+  <mathitem id="closeAngleBrackets" text="close angle brackets" />
+  <mathitem id="closeBrackets" text="close ${bracket}" />
+  <mathitem id="closeCeil" text="close ceil" />
+  <mathitem id="closeCurlyBrackets" text="close curly brackets" />
+  <mathitem id="closeFloor" text="close floor" />
+  <mathitem id="closeParentheses" text="close parentheses" />
+  <mathitem id="closeSquareBrackets" text="close square brackets" />
+  <mathitem id="displayStyle" text="display" />
+  <mathitem id="doubleVerticalBars" text="double vertical bar" />
+  <mathitem id="downdiagonalstrike" text="down diagonal" />
+  <mathitem id="enclose1" text="${enclosenotation} enclose ${content}" />
+  <mathitem id="enclose2" text="${enclosenotation} enclose ${content} end enclose" />
+  <mathitem id="enclose3" text="long division enclose ${content} end enclose" />
+  <mathitem id="enclose4" text="long division enclose ${content}" />
+  <mathitem id="encloseactuarial" text="actuarial" />
+  <mathitem id="enclosebottom" text="bottom" />
+  <mathitem id="enclosebox" text="box" />
+  <mathitem id="enclosecircle" text="circle" />
+  <mathitem id="encloseleft" text="left" />
+  <mathitem id="encloselongdiv" text="long division" />
+  <mathitem id="encloseright" text="right" />
+  <mathitem id="encloseroundedbox" text="rounded box" />
+  <mathitem id="enclosetop" text="top" />
+  <mathitem id="exponent1" text="to the power of ${exponent}" />
+  <mathitem id="exponent2" text="to the power of ${exponent} end exponent" />
+  <mathitem id="fenced" text="open parentheses ${content} close parentheses" />
+  <mathitem id="fraction1" text="${style} ${numerator} over ${denominator}" />
+  <mathitem id="fraction2" text="${style} fraction numerator ${numerator} over denominator ${denominator} end fraction" />
+  <mathitem id="horizontalstrike" text="horizontal" />
+  <mathitem id="identifier" text="${style} ${identifier}" />
+  <mathitem id="inlineStyle" text="inline" />
+  <mathitem id="italic" text="italic" />
+  <mathitem id="largeOp" text="large" />
+  <mathitem id="limit" text="limit" />
+  <mathitem id="limitop" text="${limit} as ${index} of" />
+  <mathitem id="lines" text="${line} \n ${lines}" />
+  <mathitem id="math1" text="style ${style} ${seq}" />
+  <mathitem id="math2" text="right to left ${seq}" />
+  <mathitem id="math3" text="right to left style ${style} ${seq}" />
+  <mathitem id="multipostscript1" text="subscript none superscript none" />
+  <mathitem id="multipostscript2" text="subscript none ${superscript}" />
+  <mathitem id="multipostscript3" text="${subscript} superscript none" />
+  <mathitem id="multipostscript4" text="${subscript} ${superscript}" />
+  <mathitem id="multipostscripts" text="postscripts ${multipostscriptlist}" />
+  <mathitem id="multiprescript1" text="presubscript none presuperscript none" />
+  <mathitem id="multiprescript2" text="presubscript none ${superscript}" />
+  <mathitem id="multiprescript3" text="${subscript} presuperscript none" />
+  <mathitem id="multiprescript4" text="${subscript} ${superscript}" />
+  <mathitem id="multiprescripts" text="prescripts ${multiprescriptlist}" />
+  <mathitem id="multiscripts1" text="${base} ${multipostscripts}" />
+  <mathitem id="multiscripts2" text="${base} ${multiprescripts}" />
+  <mathitem id="multiscripts3" text="${base} ${multiprescripts} ${multipostscripts}" />
+  <mathitem id="negative" text="${style} minus ${number}" />
+  <mathitem id="normal" text="straight" />
+  <mathitem id="number" text="${style} ${number}" />
+  <mathitem id="onlyLeftBracket" text="${openbracket} ${content} close" />
+  <mathitem id="onlyRightBracket" text="open ${content} ${closebracket}" />
+  <mathitem id="opIdentifier" text="${style} ${identifier}" />
+  <mathitem id="openAngleBrackets" text="open angle brackets" />
+  <mathitem id="openBrackets" text="open ${bracket}" />
+  <mathitem id="openCeil" text="open ceil" />
+  <mathitem id="openCurlyBrackets" text="open curly brackets" />
+  <mathitem id="openFloor" text="open floor" />
+  <mathitem id="openParentheses" text="open parentheses" />
+  <mathitem id="openSquareBrackets" text="open square brackets" />
+  <mathitem id="operator" text="${style} ${operator}" />
+  <mathitem id="operator2" text="${style} ${operator}" />
+  <mathitem id="over1" text="${base} with ${over} on top" />
+  <mathitem id="over2" text="stack ${base} with ${over} on top" />
+  <mathitem id="presubscript2" text="presubscript ${subscript} end presubscript" />
+  <mathitem id="presubsecript1" text="presubscript ${subscript}" />
+  <mathitem id="presuperscript1" text="presuperscript ${superscript}" />
+  <mathitem id="presuperscript2" text="presuperscript ${superscript} end presuperscript" />
+  <mathitem id="root1" text="${index} root of ${radicand}" />
+  <mathitem id="root2" text="${index} root of ${radicand} end root" />
+  <mathitem id="root3" text="root index ${index} of ${radicand}" />
+  <mathitem id="root4" text="root index ${index} of ${radicand} end root" />
+  <mathitem id="row" text="row ${cells}" />
+  <mathitem id="scriptbase" text="scriptbase ${base} end scriptbase" />
+  <mathitem id="singledot" text="dot" />
+  <mathitem id="smallOp" text="small" />
+  <mathitem id="squareRoot1" text="square root of ${radicand}" />
+  <mathitem id="squareRoot2" text="square root of ${radicand} end root" />
+  <mathitem id="strike1" text="${strikenotation} strike ${content}" />
+  <mathitem id="strike2" text="${strikenotation} strike ${content} end strike" />
+  <mathitem id="style" text="begin ${style} style ${content} end style" />
+  <mathitem id="sub" text="${base} ${subscript}" />
+  <mathitem id="subscript1" text="subscript ${subscript}" />
+  <mathitem id="subscript2" text="subscript ${subscript} end subscript" />
+  <mathitem id="subsup" text="${base} ${subscript} ${superscript}" />
+  <mathitem id="sup" text="${base} ${exponent}" />
+  <mathitem id="superscript1" text="superscript ${superscript}" />
+  <mathitem id="superscript2" text="superscript ${superscript} end superscript" />
+  <mathitem id="table" text="table ${rows} end table" />
+  <mathitem id="table2" text="table \attributes columnalign ${columnalign} rowspacing ${rowspacing} end \attributes ${rows} end table" />
+  <mathitem id="table3" text="table \attributes align ${align} columnalign ${columnalign} framespacing ${framespacing} rowspacing ${rowspacing} end \attributes ${rows} end table" />
+  <mathitem id="twolines" text="${line1} \n ${line2}" />
+  <mathitem id="twolines2" text="${line1} \n" />
+  <mathitem id="under1" text="${base} with ${under} below" />
+  <mathitem id="under2" text="stack ${base} with ${under} below" />
+  <mathitem id="underover1" text="${base} with ${under} below and ${over} on top" />
+  <mathitem id="underover2" text="stack ${base} with ${under} below and ${over} on top" />
+  <mathitem id="updiagonalstrike" text="up diagonal" />
+  <mathitem id="varOperator" text="${style} ${operator}" />
+  <mathitem id="verticalBars" text="vertical bar" />
+  <mathitem id="verticalstrike" text="vertical" />
+  <mathitem id="{" text="left curly bracket" />
+  <mathitem id="|" text="vertical line" />
+  <mathitem id="}" text="right curly bracket" />
+  <mathitem id="~" text="tilde" />
+  <mathitem id="&#xa0;" text="space" />
+  <mathitem id="&#xac;" text="not" />
+  <mathitem id="&#xaf;" text="bar" />
+  <mathitem id="&#xb0;" text="degree" />
+  <mathitem id="&#xb1;" text="plus - minus" />
+  <mathitem id="&#xb7;" text="times" />
+  <mathitem id="&#xd7;" text="cross times" />
+  <mathitem id="&#xf7;" text="obelus divided by" />
+  <mathitem id="&#x391;" text="capital alpha" />
+  <mathitem id="&#x392;" text="capital beta" />
+  <mathitem id="&#x393;" text="capital gamma" />
+  <mathitem id="&#x394;" text="capital delta" />
+  <mathitem id="&#x395;" text="capital epsilon" />
+  <mathitem id="&#x396;" text="capital zeta" />
+  <mathitem id="&#x397;" text="capital eta" />
+  <mathitem id="&#x398;" text="capital theta" />
+  <mathitem id="&#x399;" text="capital iota" />
+  <mathitem id="&#x39a;" text="capital kappa" />
+  <mathitem id="&#x39b;" text="capital lambda" />
+  <mathitem id="&#x39c;" text="capital mu" />
+  <mathitem id="&#x39d;" text="capital nu" />
+  <mathitem id="&#x39e;" text="capital xi" />
+  <mathitem id="&#x39f;" text="capital omicron" />
+  <mathitem id="&#x3a0;" text="capital pi" />
+  <mathitem id="&#x3a1;" text="capital rho" />
+  <mathitem id="&#x3a3;" text="capital sigma" />
+  <mathitem id="&#x3a4;" text="capital tau" />
+  <mathitem id="&#x3a5;" text="capital upsilon" />
+  <mathitem id="&#x3a6;" text="capital phi" />
+  <mathitem id="&#x3a7;" text="capital chi" />
+  <mathitem id="&#x3a8;" text="capital psi" />
+  <mathitem id="&#x3a9;" text="capital omega" />
+  <mathitem id="&#x3b1;" text="alpha" />
+  <mathitem id="&#x3b2;" text="beta" />
+  <mathitem id="&#x3b3;" text="gamma" />
+  <mathitem id="&#x3b4;" text="delta" />
+  <mathitem id="&#x3b5;" text="epsilon" />
+  <mathitem id="&#x3b6;" text="zeta" />
+  <mathitem id="&#x3b7;" text="eta" />
+  <mathitem id="&#x3b8;" text="theta" />
+  <mathitem id="&#x3b9;" text="iota" />
+  <mathitem id="&#x3ba;" text="kappa" />
+  <mathitem id="&#x3bb;" text="lambda" />
+  <mathitem id="&#x3bc;" text="mu" />
+  <mathitem id="&#x3bd;" text="nu" />
+  <mathitem id="&#x3be;" text="xi" />
+  <mathitem id="&#x3bf;" text="omicron" />
+  <mathitem id="&#x3c0;" text="pi" />
+  <mathitem id="&#x3c1;" text="rho" />
+  <mathitem id="&#x3c2;" text="final sigma" />
+  <mathitem id="&#x3c3;" text="sigma" />
+  <mathitem id="&#x3c4;" text="tau" />
+  <mathitem id="&#x3c5;" text="upsilon" />
+  <mathitem id="&#x3c6;" text="phi" />
+  <mathitem id="&#x3c7;" text="chi" />
+  <mathitem id="&#x3c8;" text="psi" />
+  <mathitem id="&#x3c9;" text="omega" />
+  <mathitem id="&#x2007;" text="number space" />
+  <mathitem id="&#x2009;" text="thin space" />
+  <mathitem id="&#x2025;" text="two dots" />
+  <mathitem id="&#x2026;" text="horizontal ellipsis" />
+  <mathitem id="&#x2062;" text="star times" />
+  <mathitem id="&#x2102;" text="double-struck capital c" />
+  <mathitem id="&#x2111;" text="black-letter capital i" />
+  <mathitem id="&#x2115;" text="double-struck capital n" />
+  <mathitem id="&#x211a;" text="double-struck capital q" />
+  <mathitem id="&#x211c;" text="black-letter capital r" />
+  <mathitem id="&#x211d;" text="double-struck capital r" />
+  <mathitem id="&#x2124;" text="double-struck capital z" />
+  <mathitem id="&#x2190;" text="leftwards arrow" />
+  <mathitem id="&#x2191;" text="upwards arrow" />
+  <mathitem id="&#x2192;" text="rightwards arrow" />
+  <mathitem id="&#x2193;" text="downwards arrow" />
+  <mathitem id="&#x2194;" text="left right arrow" />
+  <mathitem id="&#x2195;" text="up down arrow" />
+  <mathitem id="&#x2196;" text="north west arrow" />
+  <mathitem id="&#x2197;" text="north east arrow" />
+  <mathitem id="&#x2198;" text="south east arrow" />
+  <mathitem id="&#x2199;" text="south west arrow" />
+  <mathitem id="&#x21a4;" text="leftwards arrow from bar" />
+  <mathitem id="&#x21a6;" text="rightwards arrow from bar" />
+  <mathitem id="&#x21a9;" text="leftwards arrow with hook" />
+  <mathitem id="&#x21aa;" text="rightwards arrow with hook" />
+  <mathitem id="&#x21bc;" text="leftwards harpoon with barb upwards" />
+  <mathitem id="&#x21bd;" text="leftwards harpoon with barb downwards" />
+  <mathitem id="&#x21c0;" text="rightwards harpoon with barb upwards" />
+  <mathitem id="&#x21c1;" text="rightwards harpoon with barb downwards" />
+  <mathitem id="&#x21c4;" text="rightwards arrow over leftwards arrow" />
+  <mathitem id="&#x21c5;" text="upwards arrow leftwards of downwards arrow" />
+  <mathitem id="&#x21c6;" text="leftwards arrow over rightwards arrow" />
+  <mathitem id="&#x21cb;" text="leftwards harpoon over rightwards harpoon" />
+  <mathitem id="&#x21cc;" text="rightwards harpoon over leftwards harpoon" />
+  <mathitem id="&#x21d0;" text="leftwards double arrow" />
+  <mathitem id="&#x21d1;" text="upwards double arrow" />
+  <mathitem id="&#x21d2;" text="rightwards double arrow" />
+  <mathitem id="&#x21d3;" text="downwards double arrow" />
+  <mathitem id="&#x21d4;" text="left right double arrow" />
+  <mathitem id="&#x21d5;" text="up down double arrow" />
+  <mathitem id="&#x21f5;" text="downwards arrow leftwards of upwards arrow" />
+  <mathitem id="&#x2200;" text="for all" />
+  <mathitem id="&#x2202;" text="partial differential" />
+  <mathitem id="&#x2203;" text="there exists" />
+  <mathitem id="&#x2204;" text="there does not exist" />
+  <mathitem id="&#x2205;" text="empty set" />
+  <mathitem id="&#x2206;" text="increment" />
+  <mathitem id="&#x2207;" text="nabla" />
+  <mathitem id="&#x2208;" text="element of" />
+  <mathitem id="&#x2209;" text="not an element of" />
+  <mathitem id="&#x220b;" text="contains as member" />
+  <mathitem id="&#x220c;" text="does not contain as member" />
+  <mathitem id="&#x220f;" text="product" />
+  <mathitem id="&#x2211;" text="sum" />
+  <mathitem id="&#x2213;" text="minus - plus" />
+  <mathitem id="&#x2216;" text="set minus" />
+  <mathitem id="&#x2218;" text="ring operator" />
+  <mathitem id="&#x221d;" text="proportional to" />
+  <mathitem id="&#x221e;" text="infinity" />
+  <mathitem id="&#x2220;" text="angle" />
+  <mathitem id="&#x2221;" text="measured angle" />
+  <mathitem id="&#x2222;" text="spherical angle" />
+  <mathitem id="&#x2225;" text="parallel to" />
+  <mathitem id="&#x2226;" text="not parallel to" />
+  <mathitem id="&#x2227;" text="logical and" />
+  <mathitem id="&#x2228;" text="logical or" />
+  <mathitem id="&#x2229;" text="intersection" />
+  <mathitem id="&#x222a;" text="union" />
+  <mathitem id="&#x222b;" text="integral" />
+  <mathitem id="&#x222c;" text="double integral" />
+  <mathitem id="&#x222d;" text="triple integral" />
+  <mathitem id="&#x222e;" text="contour integral" />
+  <mathitem id="&#x222f;" text="surface integral" />
+  <mathitem id="&#x2230;" text="volume integral" />
+  <mathitem id="&#x2234;" text="therefore" />
+  <mathitem id="&#x2235;" text="because" />
+  <mathitem id="&#x223c;" text="tilde operator" />
+  <mathitem id="&#x2241;" text="not tilde" />
+  <mathitem id="&#x2243;" text="asymptotically equal to" />
+  <mathitem id="&#x2245;" text="approximately equal to" />
+  <mathitem id="&#x2248;" text="almost equal to" />
+  <mathitem id="&#x2260;" text="not equal to" />
+  <mathitem id="&#x2261;" text="identical to" />
+  <mathitem id="&#x2262;" text="not identical to" />
+  <mathitem id="&#x2264;" text="less or equal than" />
+  <mathitem id="&#x2265;" text="greater or equal than" />
+  <mathitem id="&#x226a;" text="much less-than" />
+  <mathitem id="&#x226b;" text="much greater-than" />
+  <mathitem id="&#x2282;" text="subset of" />
+  <mathitem id="&#x2283;" text="superset of" />
+  <mathitem id="&#x2286;" text="subset of or equal to" />
+  <mathitem id="&#x2287;" text="superset of or equal to" />
+  <mathitem id="&#x228f;" text="square subset of" />
+  <mathitem id="&#x2290;" text="square superset of" />
+  <mathitem id="&#x2291;" text="square subset of or equal to" />
+  <mathitem id="&#x2292;" text="square superset of or equal to" />
+  <mathitem id="&#x2293;" text="square cap" />
+  <mathitem id="&#x2294;" text="square cup" />
+  <mathitem id="&#x2295;" text="circled plus" />
+  <mathitem id="&#x2297;" text="circled times" />
+  <mathitem id="&#x22a5;" text="perpendicular" />
+  <mathitem id="&#x22ee;" text="vertical ellipsis" />
+  <mathitem id="&#x22ef;" text="midline horizontal ellipsis" />
+  <mathitem id="&#x22f0;" text="up right diagonal ellipsis" />
+  <mathitem id="&#x22f1;" text="down right diagonal ellipsis" />
+  <mathitem id="&#x2308;" text="left ceiling" />
+  <mathitem id="&#x2309;" text="right ceiling" />
+  <mathitem id="&#x230a;" text="left floor" />
+  <mathitem id="&#x230b;" text="right floor" />
+  <mathitem id="&#x23b4;" text="top square bracket" />
+  <mathitem id="&#x23b5;" text="bottom square bracket" />
+  <mathitem id="&#x23dc;" text="overparenthesis" />
+  <mathitem id="&#x23dd;" text="bottom parenthesis" />
+  <mathitem id="&#x23de;" text="overbrace" />
+  <mathitem id="&#x23df;" text="underbrace" />
+  <mathitem id="&#x25a1;" text="square" />
+  <mathitem id="&#x25b1;" text="parallelogram" />
+  <mathitem id="&#x25b3;" text="triangle" />
+  <mathitem id="&#x25cb;" text="circle" />
+  <mathitem id="&#x27e8;" text="left angle bracket" />
+  <mathitem id="&#x27e9;" text="right angle bracket" />
+  <mathitem id="&#x296e;" text="upwards harpoon with barb left beside downwards harpoon with barb right" />
+  <mathitem id="&#x296f;" text="downwards harpoon with barb left beside upwards harpoon with barb right" />
+  <mathitem id="&#x2a7d;" text="less-than or slanted equal to" />
+  <mathitem id="&#x2a7e;" text="greater-than or slanted equal to" />
+  <mathitem id="&#x2a87;" text="less-than and single-line not equal to" />
+  <mathitem id="&#x2a88;" text="greater-than and single-line not equal to" />  
 </mathitems>

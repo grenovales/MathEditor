@@ -43,7 +43,7 @@
     <Compile Include="services\MathRender.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resources\lang\accessibility-en.xml" />
+    <EmbeddedResource Include="resources\lang\accessibility-en.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
