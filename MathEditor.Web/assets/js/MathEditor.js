@@ -20,6 +20,7 @@ MathEditor.prototype = {
         this.initializeMath();
         this.initializeAccordions();
         this.latexSource.setSelectionRange(this.latexSource.value.length, this.latexSource.value.length);
+        this.insert("\\Delta =\\sum_{i=1}^N w_i (x_i - \\bar{x})^2");
     },
     initializeAccordions: function () {
         var matheditor = this;

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathEditor.Web", "MathEditor.Web\MathEditor.Web.csproj", "{D555966A-35BF-46C2-9319-2422BD0C2089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathEditor.Library", "MathEditor.Library\MathEditor.Library.csproj", "{EFB36FEF-22D5-4D10-9AC5-1DFBAE8F6D22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathEditor.Library", "MathEditor.Library\MathEditor.Library.csproj", "{0D1AC08D-3C87-4247-A87C-CDA19D2DDDE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{D555966A-35BF-46C2-9319-2422BD0C2089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D555966A-35BF-46C2-9319-2422BD0C2089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D555966A-35BF-46C2-9319-2422BD0C2089}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFB36FEF-22D5-4D10-9AC5-1DFBAE8F6D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFB36FEF-22D5-4D10-9AC5-1DFBAE8F6D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFB36FEF-22D5-4D10-9AC5-1DFBAE8F6D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFB36FEF-22D5-4D10-9AC5-1DFBAE8F6D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1AC08D-3C87-4247-A87C-CDA19D2DDDE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1AC08D-3C87-4247-A87C-CDA19D2DDDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1AC08D-3C87-4247-A87C-CDA19D2DDDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1AC08D-3C87-4247-A87C-CDA19D2DDDE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
