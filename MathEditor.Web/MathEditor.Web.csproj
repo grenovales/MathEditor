@@ -457,6 +457,7 @@
     <Content Include="assets\js\mathquill\font\Symbola.otf" />
     <Content Include="assets\js\mathquill\font\Symbola.ttf" />
     <Content Include="assets\js\mathquill\font\Symbola.woff" />
+    <Content Include="assets\js\jquery\jquery-1.10.2.js" />
     <None Include="Properties\PublishProfiles\File.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -111,18 +111,15 @@ function createRoot(jQ, root, textbox, editable) {
 
     if (!editable) {
         var textareaManager = manageTextarea(textarea, { container: jQ });
-        jQ.bind('cut paste', false).bind('copy', setTextareaSelection).prepend('<span class="selectable">$' + root.latex() + '$</span>');
+        jQ.bind('cut paste', false).bind('copy', setTextareaSelection)
+          .prepend('<span class="selectable">$' + root.latex() + '$</span>');
         textarea.blur(function () {
             cursor.clearSelection();
             setTimeout(detach); //detaching during blur explodes in WebKit
         });
-
-        textarea.detach(function () {
+        function detach() {
             textareaSpan.detach();
-        });
-        /*function detach() {
-            textareaSpan.detach();
-        }*/
+        }
         return;
     }
 

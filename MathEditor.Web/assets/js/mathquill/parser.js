@@ -133,10 +133,6 @@
         return this.then(function (result) { return two.result(result); });
     };
 
-    _.lstream = function () {
-        return stream;
-    };
-
     // -*- primitive parsers -*- //
     var string = this.string = function (str) {
         var len = str.length;

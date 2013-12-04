@@ -26,10 +26,7 @@ var VanillaSymbol = P(Symbol, function (_, _super) {
     };
 });
 
-//CharCmds[' '] = bind(VanillaSymbol, '\\:', ' ');
-//LatexCmds['\,'] = LatexCmds.thinspace = bind(VanillaSymbol, '\\, ', ' ');
-//LatexCmds['kksp'] = CharCmds[' '] = bind(VanillaSymbol, '\\:', ' ');
-
+CharCmds[' '] = bind(VanillaSymbol, '\\:', ' ');
 
 LatexCmds.prime = CharCmds["'"] = bind(VanillaSymbol, "'", '&prime;');
 
@@ -285,6 +282,7 @@ LatexCmds['bar'] = P(MathCommand, function (_, _super) {
     _.textTemplate = ['bar{', '}'];
 });*/
 
+LatexCmds['≠'] = LatexCmds.ne = LatexCmds.neq = bind(BinaryOperator, '\\ne ', '&ne;');
 
 LatexCmds.ast = LatexCmds.star = LatexCmds.loast = LatexCmds.lowast =
   bind(BinaryOperator, '\\ast ', '&lowast;');
@@ -359,11 +357,11 @@ var BigSymbol = P(Symbol, function (_, _super) {
 });
 
 LatexCmds['∑'] = LatexCmds.sum = LatexCmds.summation = bind(BigSymbol, '\\sum ', '&sum;');
-
-
 LatexCmds['∏'] = LatexCmds.prod = LatexCmds.product = bind(BigSymbol, '\\prod ', '&prod;');
 LatexCmds.coprod = LatexCmds.coproduct = bind(BigSymbol, '\\coprod ', '&#8720;');
 LatexCmds['∫'] = LatexCmds['int'] = LatexCmds.integral = bind(BigSymbol, '\\int ', '&int;');
+
+
 
 //the canonical sets of numbers
 LatexCmds.N = LatexCmds.naturals = LatexCmds.Naturals =
@@ -401,7 +399,7 @@ LatexCmds.thickspace = bind(VanillaSymbol, '\\; ', '&#160;');
 LatexCmds.mediumspace = bind(VanillaSymbol, '\\: ', '&#8201;');
 
 
-LatexCmds.thinspace = bind(VanillaSymbol, '\\, ', ' ');
+
 /* spacing special characters, gonna have to implement this in LatexCommandInput::onText somehow
 case ',':
   return VanillaSymbol('\\, ',' ');

@@ -66,7 +66,7 @@ MathEditor.prototype = {
             }
         };
 
-        $("#" + PanelID + " a.s").addClass("easyui-tooltip").attr("title", function (index, attr) {
+        $("#" + PanelID).find(" a.s").addClass("easyui-tooltip").attr("title", function (index, attr) {
             return getSymbol(this);
         }).mouseover(function (event) {
             $("#divInformation").html(getSymbol(this));

@@ -32,21 +32,19 @@ var latexMathParser = (function () {
       .or(string('\\').then(
         regex(/^[a-z]+/i)
         .or(regex(/^\s+/).result(' '))
-        .or(regex(/^[\\,]/).result('thinspace'))
-        .or(regex(/^[\\;]/).result('thickspace'))
-        .or(regex(/^[\\:]/).result('mediumspace'))
+      .or(regex(/^[\\,]/).result('thinspace'))
+      .or(regex(/^[\\;]/).result('thickspace'))
+      .or(regex(/^[\\:]/).result('mediumspace'))
         .or(any)
       )).then(function (ctrlSeq) {
-          //var result = regex(/^[\\,|\\\:]/).then;
-
           var cmdKlass = LatexCmds[ctrlSeq];
+
           if (cmdKlass) {
               return cmdKlass(ctrlSeq).parser();
           }
           else {
               return fail('unknown command: \\' + ctrlSeq);
           }
-
       })
     ;
 
