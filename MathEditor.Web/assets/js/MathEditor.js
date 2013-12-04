@@ -16,6 +16,12 @@ function MathEditor() {
 
 MathEditor.prototype = {
     initialize: function () {
+        //$.messager.progress({
+        //    title: "MathEditor Pre-Alpha",
+        //    text: 'Loading',//this.getLocalText("WAIT_FOR_EDITOR_DOWNLOAD"),
+        //    msg: "<center><a href='http://matheditor.webappdemos.com' target='_blank' class='bt' >MathEditor</a></center>",
+        //    interval: 900000
+        //});
         this.initializeLaTexSource();
         this.initializeMath();
         this.initializeAccordions();

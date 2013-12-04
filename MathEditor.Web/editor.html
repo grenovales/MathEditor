@@ -8,9 +8,16 @@
         <link href="http://codemirror.net/lib/codemirror.css" rel="stylesheet" />
         <link href="assets/js/jquery-easyui/themes/gray/easyui.css" rel="stylesheet" />
         <link href="assets/js/jquery-easyui/themes/icon.css" rel="stylesheet" />
-        <link href="assets/js/mathquill/mathquill.css" rel="stylesheet" />
+        <link href="assets/js/mathquill/css/mathquill.css" rel="stylesheet" />
+        <script src="assets/js/jquery/jquery.min.js"></script>
+        <script src="assets/js/jquery-easyui/jquery.easyui.min.js"></script>
     </head>
-    <body class="easyui-layout">     
+    <body class="easyui-layout" id="bodyPage">     
+        <div id="WaitMsg" style="margin:10px;padding:10px;height:3000px;background-color:#E7F0FF;border:1px dotted #95B8E7;border-top:1px solid #95B8E7; color:#0E2D5F;">
+            Editor is downloading...
+            <br/><br/>Thank you for your patience.
+            <br/><br/>If the editor is not loaded properly in one or two seconds, you can try to find the page by pressing the F5 key.
+        </div>
         <div data-options="region:'north', collapsible: false" style="height:28px;background:#eeeeee">
             <a href="javascript:void(0)" id="mbFile" class="easyui-menubutton"  data-options="menu:'#mmFile',iconCls:'icon-page'">File</a>
             <div id="mmFile" style="width:150px;">
@@ -65,9 +72,17 @@
             </div>
         </div>
 
-        <script src="assets/js/jquery/jquery.min.js"></script>
-        <script src="assets/js/jquery-easyui/jquery.easyui.min.js"></script>
-        <script src="assets/js/mathquill/mathquill.js"></script>
+        <script src="assets/js/mathquill/intro.js"></script>
+        <script src="assets/js/mathquill/textarea.js"></script>
+        <script src="assets/js/mathquill/parser.js"></script>
+        <script src="assets/js/mathquill/tree.js"></script>
+        <script src="assets/js/mathquill/math.js"></script>
+        <script src="assets/js/mathquill/rootelements.js"></script>
+        <script src="assets/js/mathquill/commands.js"></script>
+        <script src="assets/js/mathquill/symbols.js"></script>
+        <script src="assets/js/mathquill/latex.js"></script>
+        <script src="assets/js/mathquill/cursor.js"></script>
+        <script src="assets/js/mathquill/publicapi.js"></script>
         <script src="assets/js/MathEditor.js"></script>
         <script type="text/x-mathjax-config">
           MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
