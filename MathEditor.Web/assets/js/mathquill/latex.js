@@ -32,9 +32,6 @@ var latexMathParser = (function () {
       .or(string('\\').then(
         regex(/^[a-z]+/i)
         .or(regex(/^\s+/).result(' '))
-      .or(regex(/^[\\,]/).result('thinspace'))
-      .or(regex(/^[\\;]/).result('thickspace'))
-      .or(regex(/^[\\:]/).result('mediumspace'))
         .or(any)
       )).then(function (ctrlSeq) {
           var cmdKlass = LatexCmds[ctrlSeq];
@@ -50,7 +47,7 @@ var latexMathParser = (function () {
 
     var matrixCommand =
       regex(/^\\begin{matrix}/)
-      .then(regex(/^(.*)\\end{matrix}/))
+      .then(regex(/^(.*?)\\end{matrix}/))
       .then(function (a) {
           // Strip out the trailing command (\end{matrix})
           var content = a.replace(/\\end{matrix}/, '');
@@ -93,11 +90,18 @@ var latexMathParser = (function () {
           return Parser.succeed(cmd);
       })
     ;
+    // When giving invalid LaTeX, ensure that the equation doesn't dissapear
+    var unknown =
+      regex(/^[\\|_|\^|{]((?!right))/).then(function (a) {
+          return Parser.succeed(LatexCmds.blank());
+      })
+    ;
 
     var command = controlSequence
       .or(matrixCommand)
       .or(variable)
       .or(symbol)
+       .or(unknown)
     ;
 
     // Parsers yielding MathBlocks

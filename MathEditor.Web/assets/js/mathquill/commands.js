@@ -296,7 +296,6 @@ LatexCmds['hat'] = P(MathCommand, function (_, _super) {
 });
 
 // Pointer to the setSize() function in order to make it more easily accessible outside the closure
-// Pointer to the setSize() function in order to make it more easily accessible outside the closure
 var MatrixSize = null;
 var Matrix =
 LatexCmds.matrix = P(MathCommand, function (_, _super) {
@@ -491,6 +490,10 @@ CharCmds[']'] = bind(CloseParen, '[', ']');
 
 var Pipes =
 LatexCmds.lpipe =
+//LatexCmds.rpipe =
+CharCmds['|'] = bind(CloseParen, '\|','\|');
+/*var Pipes =
+LatexCmds.lpipe =
 LatexCmds.rpipe =
 CharCmds['|'] = P(Paren, function (_, _super) {
     _.init = function () {
@@ -498,7 +501,7 @@ CharCmds['|'] = P(Paren, function (_, _super) {
     };
 
     _.createLeftOf = CloseBracket.prototype.createLeftOf;
-});
+});*/
 
 var TextBlock =
 CharCmds.$ =
@@ -791,6 +794,14 @@ LatexCmds.binomial = P(MathCommand, function (_, _super) {
         var parens = this.jQ.filter('.paren');
         scale(parens, min(1 + .2 * (height - 1), 1.2), 1.05 * height);
     };
+});
+
+// Blank command for invalid LaTeX, simply renders nothing on the screen instead of making the
+// whole equation crash
+var Blank = null;
+var Blank =
+LatexCmds.blank = P(MathCommand, function (_, _super) {
+    _.htmlTemplate = '';
 });
 
 var Choose =

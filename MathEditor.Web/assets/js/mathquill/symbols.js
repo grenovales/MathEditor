@@ -394,9 +394,9 @@ LatexCmds.H = LatexCmds.Hamiltonian = LatexCmds.quaternions = LatexCmds.Quaterni
 //spacing
 LatexCmds.quad = LatexCmds.emsp = bind(VanillaSymbol, '\\quad ', '&#160;&#160;');
 LatexCmds.qquad = bind(VanillaSymbol, '\\qquad ', '&#160;&#160;&#160;&#160;');
-LatexCmds.thinspace = bind(VanillaSymbol, '\\, ', '&#8202;');
-LatexCmds.thickspace = bind(VanillaSymbol, '\\; ', '&#160;');
-LatexCmds.mediumspace = bind(VanillaSymbol, '\\: ', '&#8201;');
+LatexCmds.thinspace = LatexCmds[','] = bind(VanillaSymbol, '\\, ', '&#8202;')
+LatexCmds.thickspace = LatexCmds[';'] = bind(VanillaSymbol, '\\; ', '&#160;');
+LatexCmds.mediumspace = LatexCmds[':']= bind(VanillaSymbol, '\\: ', '&#8201;');
 
 
 
