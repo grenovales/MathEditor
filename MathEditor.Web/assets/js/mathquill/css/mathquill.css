@@ -42,7 +42,33 @@
     display:inline-block;
   }
 
+.mathquill-rendered-math .non-leaf .widehat-prefix {
+    display: block;
+    text-align: center;
+    line-height: .8em;
+    margin-bottom: -.4em;
+    font-size: 1em;
+    font-family: MathJax_Size3;
+    transform:scale(3,1); /* W3C */
+    -webkit-transform:scale(3,1); /* Safari and Chrome */
+    -moz-transform:scale(3,1); /* Firefox */
+    -ms-transform:scale(3,1); /* IE 9 */
+    -o-transform:scale(3,1); /* Opera */
+  }
 
+.mathquill-rendered-math .non-leaf .widetilde-prefix {
+    display: block;
+    text-align: center;
+    line-height: .8em;
+    margin-bottom: -.4em;
+    font-size: 1em;
+    font-family: MathJax_Size3;
+    transform:scale(3,1); /* W3C */
+    -webkit-transform:scale(3,1); /* Safari and Chrome */
+    -moz-transform:scale(3,1); /* Firefox */
+    -ms-transform:scale(3,1); /* IE 9 */
+    -o-transform:scale(3,1); /* Opera */
+  }
 
 .mathquill-rendered-math .hat-prefix {
     display: block;

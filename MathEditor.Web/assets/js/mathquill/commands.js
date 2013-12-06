@@ -295,6 +295,71 @@ LatexCmds['hat'] = P(MathCommand, function (_, _super) {
     _.textTemplate = ['hat{', '}'];
 });
 
+var WideHat =
+LatexCmds.widehat =
+LatexCmds['widehat'] = P(MathCommand, function (_, _super) {
+    _.ctrlSeq = '\\widehat';
+    _.htmlTemplate =
+        '<span class="non-leaf">'
+      + '<span class="widehat-prefix">&#94;</span>'
+      + '<span class="vector-stem">&0</span>'
+      + '</span>'
+    ;
+    _.textTemplate = ['widehat{', '}'];
+});
+
+var Tilde =
+LatexCmds.tilde =
+LatexCmds['tilde'] = P(MathCommand, function (_, _super) {
+    _.ctrlSeq = '\\tilde';
+    _.htmlTemplate =
+        '<span class="non-leaf">'
+      + '<span class="tilde-prefix">&#126;</span>'
+      + '<span class="vector-stem">&0</span>'
+      + '</span>'
+    ;
+    _.textTemplate = ['tilde{', '}'];
+});
+
+var WideTilde =
+LatexCmds.widetilde =
+LatexCmds['widetilde'] = P(MathCommand, function (_, _super) {
+    _.ctrlSeq = '\\widetilde';
+    _.htmlTemplate =
+        '<span class="non-leaf">'
+      + '<span class="widetilde-prefix">&#126;</span>'
+      + '<span class="vector-stem">&0</span>'
+      + '</span>'
+    ;
+    _.textTemplate = ['widetilde{', '}'];
+});
+
+
+// Color command
+var Color = LatexCmds['color'] = P(MathCommand, function (_, _super) {
+    this.color = 'red'
+    _.ctrlSeq = '\\color';
+    _.htmlTemplate =
+      '<span class="non-leaf" style="color:red">'
+      + '<span>&0</span>'
+      + '</span>'
+    ;
+    _.latex = function () {
+        var children = this.foldChildren([], function (latex, child) {
+            latex.push(child.latex());
+            return latex;
+        });
+        var string = '\\color{' + this.color + '}{';
+        for (var i = 0; i < children.length; i++) {
+            string += children[i];
+        }
+        string += '}';
+        return string;
+    };
+    _.parser = function () { return Parser.succeed(this); };
+});
+
+
 // Pointer to the setSize() function in order to make it more easily accessible outside the closure
 var MatrixSize = null;
 var Matrix =

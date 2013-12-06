@@ -413,7 +413,7 @@
     <Content Include="assets\js\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.svg" />
     <Content Include="assets\js\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.svg" />
     <Content Include="assets\js\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.svg" />
-    <Content Include="assets\js\mathquill\font\Symbola.svg" />
+    <Content Include="assets\js\mathquill\font\svg\Symbola.svg" />
     <Content Include="assets\js\mathquill\css\mathquill.css" />
     <Content Include="assets\js\mathquill\intro.js" />
     <Content Include="assets\js\mathquill\latex.js" />
@@ -454,10 +454,28 @@
     <Content Include="assets\js\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.ttf" />
     <Content Include="assets\js\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.woff" />
     <Content Include="assets\js\mathquill\font\Symbola.eot" />
-    <Content Include="assets\js\mathquill\font\Symbola.otf" />
-    <Content Include="assets\js\mathquill\font\Symbola.ttf" />
-    <Content Include="assets\js\mathquill\font\Symbola.woff" />
+    <Content Include="assets\js\mathquill\font\otf\Symbola.otf" />
+    <Content Include="assets\js\mathquill\font\ttf\Symbola.ttf" />
+    <Content Include="assets\js\mathquill\font\woff\Symbola.woff" />
     <Content Include="assets\js\jquery\jquery-1.10.2.js" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Main-Bold.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Main-BoldItalic.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Main-Italic.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Main-Regular.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Size1-Regular.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Size2-Regular.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Size3-Regular.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Size4-Regular.woff" />
+    <Content Include="assets\js\mathquill\font\woff\STIXMathJax_Size5-Regular.woff" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Main-Bold.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Main-BoldItalic.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Main-Italic.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Main-Regular.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Size1-Regular.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Size2-Regular.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Size3-Regular.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Size4-Regular.otf" />
+    <Content Include="assets\js\mathquill\font\otf\STIXMathJax_Size5-Regular.otf" />
     <None Include="Properties\PublishProfiles\File.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -472,6 +490,7 @@
       <Name>MathEditor.Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -97,10 +97,37 @@ var latexMathParser = (function () {
       })
     ;
 
-    var command = controlSequence
-      .or(matrixCommand)
-      .or(variable)
-      .or(symbol)
+    // Color command
+    var colorCommand =
+      regex(/^\\color{([a-zA-Z]*)}{([^}]*)}/)
+      .then(function (a) {
+          var cmd = Color();
+
+          var regex = /^\\color{([a-zA-Z]*)}{([^}]*)}/;
+          var match = regex.exec(a);
+
+          var block = latexMathParser.parse(match[2]);
+          cmd.blocks = [];
+          cmd.blocks.push(block);
+          cmd.blocks[0].adopt(cmd, cmd.ends[R], 0);
+
+          cmd.color = match[1];
+
+          cmd.htmlTemplate =
+          '<span class="non-leaf" style="color:' + match[1] + '">'
+          + '<span>&0</span>'
+          + '</span>';
+
+          return Parser.succeed(cmd);
+      })
+    ;
+
+
+    var command = matrixCommand
+      .or(colorCommand)
+       .or(controlSequence)
+       .or(variable)
+       .or(symbol)
        .or(unknown)
     ;
 
