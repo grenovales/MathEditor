@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC>
+﻿<!DOCTYPE html PUBLIC>
 <?xml version="1.0" encoding="UTF-8" ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -53,16 +53,28 @@
         </div>
         <div data-options="region:'center'">
             <div class="easyui-layout" data-options="fit:true">
-                <div data-options="region:'center'">
+                <div data-options="region:'center',fit:true">
                     <div class="easyui-layout" data-options="fit:true">
-                        <div data-options="region:'center',tabPosition:'bottom'" class="easyui-tabs" >
-                            <div id="editable-math" class="mathquill-editable" title="Editor"></div>
-                            <div title="LaTex"><textarea id="latex-source"data-options="fit:true"></textarea></div>
+                        <div data-options="region:'center'">
+                            <div data-options="fit:true, tabPosition:'bottom'" class="easyui-tabs">
+                                <div id="editable-math" class="mathquill-editable" title="Editor"></div>
+                                <div title="LaTex"><textarea id="latex-source" data-options="fit:true"></textarea></div>
+                            </div>
                         </div>
-                        <div data-options="region:'west'" style="width:30px;background:#f3f3f3">
+                        <div data-options="region:'west'" style="width:40px;background:#f3f3f3;text-align:center;padding-top: 10px;">
                             <a href="#" class="easyui-linkbutton easyui-tooltip" title="Zoom In Formula Editor" data-options="iconCls:'icon-magnifier_zoom_in',plain:'true',position:'right'" onclick="javascript:alert('Zoom In')" ></a>
-                            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-magifier_zoom_out',plain:'true'" onclick="javascript:alert('Zoom Out')" ></a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Zoom Out Formula Editor" data-options="iconCls:'icon-magifier_zoom_out',plain:'true',position:'right'" onclick="javascript:alert('Zoom Out')" ></a>
                             <div class="menu-sep"></div>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Plus" data-options="plain:'true',position:'right'"  onclick="javascript:matheditor.insert('+ ')" >$+$</a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Minus" data-options="plain:'true',position:'right'"  onclick="javascript:matheditor.insert('- ')" >$-$</a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Times" data-options="plain:'true',position:'right'"  onclick="javascript:matheditor.insert('\\times ')" >$\times$</a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Division" data-options="plain:'true',position:'right'"  onclick="javascript:matheditor.insert('\\div ')" >$\div$</a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Equals" data-options="plain:'true',position:'right'" onclick="javascript:matheditor.insert('= ')" >$=$</a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Square Root" data-options="plain:'true',position:'right'" onclick="javascript:matheditor.insert('\\sqrt{ } ')" >$\sqrt{□}$</a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Nth Root" data-options="plain:'true',position:'right'" onclick="javascript:matheditor.insert('\\sqrt[n]{ } ')" >$\sqrt[n]{□}$</a>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Fraction" data-options="plain:'true',position:'right'" onclick="javascript:matheditor.insert('\\frac{ }{ } ')" >$\frac□□$</a>
+                            <div class="menu-sep"></div>
+                            <a href="#" class="easyui-linkbutton easyui-tooltip" title="Sum" data-options="plain:'true',position:'right'" onclick="javascript:matheditor.insert('\\sum ')" >$\sum$</a>
                         </div>
                     </div>
                     

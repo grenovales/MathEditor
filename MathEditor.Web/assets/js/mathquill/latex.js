@@ -45,12 +45,68 @@ var latexMathParser = (function () {
       })
     ;
 
+    var LeftRightCommand =
+      regex(/^\\left/)
+      .then(regex(/^(.*?)\\right/))
+      .then(function (a) {
+          // Strip out the trailing command (\end{matrix})
+          //var content = a.replace(/\\end{matrix}/, '');
+
+          //Determine if wee need to close or put a point
+          
+          // Retrieve the matrix command
+          var cmd = LatexCmds.matrix();
+
+          //// Parse the individual blocks within the matrix
+          //// Refer to http://en.wikibooks.org/wiki/LaTeX/Mathematics to learn more about the LaTeX
+          //// matrix notation.
+          //// Basically rows are delimited by double backslashes and columns by ampersands
+          //var blocks = [];
+          //var rows = content.split('\\\\');
+          //for (var i = 0; i < rows.length; i++) {
+          //    // We have a row, now split it into its respective columns
+          //    var columns = rows[i].split('&');
+          //    for (var a = 0; a < columns.length; a++) {
+          //        // Parse the individual block, this block may contain other more complicated commands
+          //        // like a square root, we delegate the parsing of this to the Parser object. It returns
+          //        // a MathElement block object which is the object representation of the formula.
+          //        var block = latexMathParser.parse(columns[a]);
+          //        blocks.push(block);
+          //    }
+          //}
+
+          //// Tell our Latex.matrix command how big our matrix is, recall that MatrixSize is simply an
+          //// alias for LatexCmds.matrix.setSize
+          //MatrixSize(rows.length, columns.length);
+
+          //// Attach the child blocks (each element of the matrix) to the parent matrix object
+          //cmd.blocks = blocks;
+          //for (var i = 0; i < blocks.length; i += 1) {
+          //    blocks[i].adopt(cmd, cmd.ends[R], 0);
+          //}
+          //// The block elements attached to a command are each rendered and then they replace the
+          //// '&0', '&1', '&2', '&3'... placeholders that are found within the command's htmlTemplate
+
+          //// Return the Latex.matrix() object to the main parser so that it knows to render this
+          //// particular portion of latex in this fashion
+          return Parser.succeed(cmd);
+      });
+
     var matrixCommand =
       regex(/^\\begin{matrix}/)
       .then(regex(/^(.*?)\\end{matrix}/))
       .then(function (a) {
           // Strip out the trailing command (\end{matrix})
           var content = a.replace(/\\end{matrix}/, '');
+
+          //\begin{matrix}1&3&\begin{matrix}3\\3\\3\end{matrix}\end{matrix}33
+          var blocks = [];
+          var regex = /\\begin{matrix}(.*?)\\end{matrix}/g;
+          var match = regex.exec(a);
+          if (match) {
+              var block = latexMathParser.parse(match[0]);
+              blocks.push(block);
+          }
 
           // Retrieve the matrix command
           var cmd = LatexCmds.matrix();
@@ -59,8 +115,13 @@ var latexMathParser = (function () {
           // Refer to http://en.wikibooks.org/wiki/LaTeX/Mathematics to learn more about the LaTeX
           // matrix notation.
           // Basically rows are delimited by double backslashes and columns by ampersands
-          var blocks = [];
-          var rows = content.split('\\\\');
+          
+          var rows;
+          if (match){
+          }
+          else {
+              rows = content.split('\\\\');
+          }
           for (var i = 0; i < rows.length; i++) {
               // We have a row, now split it into its respective columns
               var columns = rows[i].split('&');
@@ -124,6 +185,7 @@ var latexMathParser = (function () {
 
 
     var command = matrixCommand
+        .or(LeftRightCommand)
       .or(colorCommand)
        .or(controlSequence)
        .or(variable)

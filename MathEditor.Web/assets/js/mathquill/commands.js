@@ -435,16 +435,16 @@ LatexCmds.nthroot = P(SquareRoot, function (_, _super) {
     };
 });
 
-// Round/Square/Curly/Angle Brackets (aka Parens/Brackets/Braces)
+ //Round/Square/Curly/Angle Brackets (aka Parens/Brackets/Braces)
 var Bracket = P(MathCommand, function (_, _super) {
     _.init = function (open, close, ctrlSeq, end) {
-        _super.init.call(this, '\\left' + ctrlSeq,
+        var htmlTemp =             
             '<span class="non-leaf">'
           + '<span class="scaled paren">' + open + '</span>'
           + '<span class="non-leaf">&0</span>'
           + '<span class="scaled paren">' + close + '</span>'
-          + '</span>',
-          [open, close]);
+          + '</span>';
+        _super.init.call(this, '\\left' + ctrlSeq, htmlTemp,[open, close]);
         this.end = '\\right' + end;
     };
     _.jQadd = function () {
@@ -506,8 +506,11 @@ LatexCmds.right = P(MathCommand, function (_) {
 
 LatexCmds.lbrace =
 CharCmds['{'] = bind(Bracket, '{', '}', '\\{', '\\}');
+//CharCmds['{'] = bind(Bracket, '{', '}', '\\{', '\\}');
 LatexCmds.langle =
 LatexCmds.lang = bind(Bracket, '&lang;', '&rang;', '\\langle ', '\\rangle ');
+LatexCmds.lceil = bind(Bracket, '&#x2308;','&#x2309;','\\lceil ','\\rceil ');
+LatexCmds.lfloor = bind(Bracket, '&#x230A;','&#x230B;','\\lceil ','\\rceil ');
 
 // Closing bracket matching opening bracket above
 var CloseBracket = P(Bracket, function (_, _super) {
@@ -530,6 +533,8 @@ LatexCmds.rbrace =
 CharCmds['}'] = bind(CloseBracket, '{', '}', '\\{', '\\}');
 LatexCmds.rangle =
 LatexCmds.rang = bind(CloseBracket, '&lang;', '&rang;', '\\langle ', '\\rangle ');
+LatexCmds.rceil = bind(Bracket, '&#x2308;','&#x2309;','\\lceil ','\\rceil ');
+LatexCmds.rfloor = bind(Bracket, '&#x230A;','&#x230B;','\\lceil ','\\rceil ');
 
 var parenMixin = function (_, _super) {
     _.init = function (open, close) {
