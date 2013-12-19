@@ -87,6 +87,8 @@
     <Content Include="assets\formulas\VERTICAL_SPACING_MORE.html" />
     <Content Include="assets\formulas\OPERATOR_SYMBOLS.html" />
     <Content Include="assets\js\demo.js" />
+    <Content Include="Queue.js" />
+    <Content Include="JavaScript2.js" />
     <Content Include="assets\js\jquery-easyui\easyloader.js" />
     <Content Include="assets\js\jquery-easyui\jquery.easyui.min.js" />
     <Content Include="assets\js\jquery-easyui\licence_gpl.txt" />

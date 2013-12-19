@@ -248,39 +248,44 @@ var MathCommand = P(MathElement, function (_, _super) {
         var cmdId = ' mathquill-command-id=' + cmd.id;
         var tokens = cmd.htmlTemplate.match(/<[^<>]+>|[^<>]+/g);
 
-        pray('no unmatched angle brackets', tokens.join('') === this.htmlTemplate);
+        if (tokens) {
+            pray('no unmatched angle brackets', tokens.join('') === this.htmlTemplate);
 
-        // add cmdId to all top-level tags
-        for (var i = 0, token = tokens[0]; token; i += 1, token = tokens[i]) {
-            // top-level self-closing tags
-            if (token.slice(-2) === '/>') {
-                tokens[i] = token.slice(0, -2) + cmdId + '/>';
+            // add cmdId to all top-level tags
+            for (var i = 0, token = tokens[0]; token; i += 1, token = tokens[i]) {
+                // top-level self-closing tags
+                if (token.slice(-2) === '/>') {
+                    tokens[i] = token.slice(0, -2) + cmdId + '/>';
+                }
+                    // top-level open tags
+                else if (token.charAt(0) === '<') {
+                    pray('not an unmatched top-level close tag', token.charAt(1) !== '/');
+
+                    tokens[i] = token.slice(0, -1) + cmdId + '>';
+
+                    // skip matching top-level close tag and all tag pairs in between
+                    var nesting = 1;
+                    do {
+                        i += 1, token = tokens[i];
+                        pray('no missing close tags', token);
+                        // close tags
+                        if (token.slice(0, 2) === '</') {
+                            nesting -= 1;
+                        }
+                            // non-self-closing open tags
+                        else if (token.charAt(0) === '<' && token.slice(-2) !== '/>') {
+                            nesting += 1;
+                        }
+                    } while (nesting > 0);
+                }
             }
-                // top-level open tags
-            else if (token.charAt(0) === '<') {
-                pray('not an unmatched top-level close tag', token.charAt(1) !== '/');
-
-                tokens[i] = token.slice(0, -1) + cmdId + '>';
-
-                // skip matching top-level close tag and all tag pairs in between
-                var nesting = 1;
-                do {
-                    i += 1, token = tokens[i];
-                    pray('no missing close tags', token);
-                    // close tags
-                    if (token.slice(0, 2) === '</') {
-                        nesting -= 1;
-                    }
-                        // non-self-closing open tags
-                    else if (token.charAt(0) === '<' && token.slice(-2) !== '/>') {
-                        nesting += 1;
-                    }
-                } while (nesting > 0);
-            }
+            return tokens.join('').replace(/>&(\d+)/g, function ($0, $1) {
+                return ' mathquill-block-id=' + blocks[$1].id + '>' + blocks[$1].join('html');
+            });
         }
-        return tokens.join('').replace(/>&(\d+)/g, function ($0, $1) {
-            return ' mathquill-block-id=' + blocks[$1].id + '>' + blocks[$1].join('html');
-        });
+        else {
+            return '';
+        }
     };
 
     // methods to export a string representation of the math tree

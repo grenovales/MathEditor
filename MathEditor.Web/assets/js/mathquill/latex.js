@@ -92,6 +92,7 @@ var latexMathParser = (function () {
           return Parser.succeed(cmd);
       });
 
+
     var matrixCommand =
       regex(/^\\begin{matrix}/)
       .then(regex(/^(.*?)\\end{matrix}/))
@@ -115,9 +116,9 @@ var latexMathParser = (function () {
           // Refer to http://en.wikibooks.org/wiki/LaTeX/Mathematics to learn more about the LaTeX
           // matrix notation.
           // Basically rows are delimited by double backslashes and columns by ampersands
-          
+
           var rows;
-          if (match){
+          if (match) {
           }
           else {
               rows = content.split('\\\\');
@@ -149,8 +150,199 @@ var latexMathParser = (function () {
           // Return the Latex.matrix() object to the main parser so that it knows to render this
           // particular portion of latex in this fashion
           return Parser.succeed(cmd);
-      })
-    ;
+      });
+
+
+    //var matrixCommand =
+    //  regex(/^\\begin{matrix}/)
+    //  .then(regex(/^(.*?)\\end{matrix}/))
+    //  .then(function (a) {
+    //        var cmd = LatexCmds.matrix();
+    //        var blocks = [];
+    //        var LatexBlocks = [];
+    //        var rows;
+
+    //        var findmatrix = function(Latex) {
+    //            var sregex = /(\\begin{matrix}.*?\\end{matrix})/g;
+    //            var eregex = /(\\begin{matrix}.*?\\end{matrix})/g;
+    //            return Latex.match(regex);
+    //        };
+
+    //        var getHtml = function() {
+
+    //        };
+
+
+
+    //      // Strip out the trailing command (\end{matrix})
+    //      var content = a.replace(/\\end{matrix}/, '');
+    //      var i = 0;
+    //      var ltxcmd = a.length;
+    //      var strBuff = '';
+
+    //      var match = findmatrix(a);
+    //      while (match) {
+    //          LatexBlocks.push(strBuff);
+    //          match = findmatrix(match[1]);
+    //      }
+
+    //      var match = findmatrix(a);
+    //      while (i < ltxcmd) {
+    //          if (match.index == i) {
+    //              if (strBuff.length > 0) {
+    //                  LatexBlocks.push(strBuff);
+    //                  strBuff = '';
+    //              }
+    //              a = a.slice(match.index, (match[0].length + match.index));
+    //              match = findmatrix(match[1]);
+                  
+    //          }
+    //          else {
+    //          }
+    //          strBuff = strBuff + a[i];
+    //          a.substring(1);
+    //          i++;
+    //      }
+
+    //      //var strBuff = '';
+    //      //var i = 0;
+    //      //var ltxcmd = a.length;
+    //      //while (strBuff.length < ltxcmd) {
+    //      //    strBuff = strBuff + a.substring(1);
+              
+    //      //    //var match = findmatrix(a);
+    //      //    //if (match) {
+    //      //    //    if (strBuff.length > 0)
+    //      //    //        LatexBlocks.push(strBuff);
+    //      //    //    LatexBlocks
+    //      //    //    while (findmatrix(match[0])) {
+
+    //      //    //    }
+    //      //    //}
+    //      //    //else {
+
+    //      //    //}
+
+    //      //    //if (i === match.index) {
+    //      //    //    if (strBuff.length > 0)
+    //      //    //        LatexBlocks.push(strBuff);
+
+    //      //    //    //var block = latexMathParser.parse(match[0]);
+    //      //    //    LatexBlocks.push(a.substring(match.index, match[0].length + match.index));
+
+    //      //    //    strBuff = '';
+
+    //      //    //    i = i + match[0].length;
+    //      //    //}
+    //      //    //else {
+    //      //    //    strBuff = strBuff + a[i];
+    //      //    //    i++;
+    //      //    //}
+
+    //      //}
+    //      //if (strBuff.length > 0)
+    //      //    LatexBlocks.push(strBuff);
+
+    //      //var regex = /\\begin{matrix}(.*?)\\end{matrix}/g;
+    //      //var match = regex.exec(a);
+    //      //if (match) {
+    //      //    var matrixstart = match.index;
+    //      //    var matrixleng = match[0].length;
+              
+           
+              
+    //      //  }
+
+    //      //\begin{matrix}1&3&\begin{matrix}3\\3\\3\end{matrix}\end{matrix}33
+          
+    //      //var regex = /\\begin{matrix}(.*?)\\end{matrix}/g;
+    //      //var match = regex.exec(a);
+    //      //if (match) {
+    //      //    LatexBlocks.push(a.replace(match[0], ''));
+    //      //    var block = latexMathParser.parse(match[0]);
+    //      //    LatexBlocks.push(block);
+    //      //}
+
+
+    //      // Retrieve the matrix command
+          
+          
+          
+    //      if (LatexBlocks.length >0) {
+    //          rows = LatexBlocks[0].split('\\\\');
+    //          for (var i = 0; i < rows.length; i++) {
+    //              // We have a row, now split it into its respective columns
+    //              var columns = rows[i].split('&');
+    //              for (var a = 0; a < columns.length; a++) {
+    //                  // Parse the individual block, this block may contain other more complicated commands
+    //                  // like a square root, we delegate the parsing of this to the Parser object. It returns
+    //                  // a MathElement block object which is the object representation of the formula.
+                      
+    //                  if (columns[a].length > 0)
+    //                      blocks.push(latexMathParser.parse(columns[a]));
+    //                  else {
+    //                      var block = latexMathParser.parse(LatexBlocks[1]);
+    //                      blocks.push(block);
+    //                  }
+    //                  //var block = latexMathParser.parse(columns[a]);
+    //                  //blocks.push(block);
+    //              }
+    //          }
+    //          MatrixSize(rows.length, columns.length);
+    //      }
+    //      else {
+    //          rows = content.split('\\\\');
+    //          for (var i = 0; i < rows.length; i++) {
+    //              // We have a row, now split it into its respective columns
+    //              var columns = rows[i].split('&');
+    //              for (var a = 0; a < columns.length; a++) {
+    //                  // Parse the individual block, this block may contain other more complicated commands
+    //                  // like a square root, we delegate the parsing of this to the Parser object. It returns
+    //                  // a MathElement block object which is the object representation of the formula.
+    //                  var block = latexMathParser.parse(columns[a]);
+    //                  blocks.push(block);
+    //              }
+    //          }
+    //          // Tell our Latex.matrix command how big our matrix is, recall that MatrixSize is simply an
+    //          // alias for LatexCmds.matrix.setSize
+    //          MatrixSize(rows.length, columns.length);
+
+    //          //// Attach the child blocks (each element of the matrix) to the parent matrix object
+    //          //cmd.blocks = blocks;
+    //          //for (var i = 0; i < blocks.length; i += 1) {
+    //          //    blocks[i].adopt(cmd, cmd.ends[R], 0);
+    //          //}
+    //      }
+    //      //for (var i = 0; i < rows.length; i++) {
+    //      //    // We have a row, now split it into its respective columns
+    //      //    var columns = rows[i].split('&');
+    //      //    for (var a = 0; a < columns.length; a++) {
+    //      //        // Parse the individual block, this block may contain other more complicated commands
+    //      //        // like a square root, we delegate the parsing of this to the Parser object. It returns
+    //      //        // a MathElement block object which is the object representation of the formula.
+    //      //        var block = latexMathParser.parse(columns[a]);
+    //      //        blocks.push(block);
+    //      //    }
+    //      //}
+
+    //      //// Tell our Latex.matrix command how big our matrix is, recall that MatrixSize is simply an
+    //      //// alias for LatexCmds.matrix.setSize
+    //      //MatrixSize(rows.length, columns.length);
+
+    //      //// Attach the child blocks (each element of the matrix) to the parent matrix object
+    //      cmd.blocks = blocks;
+    //      for (var i = 0; i < blocks.length; i += 1) {
+    //          blocks[i].adopt(cmd, cmd.ends[R], 0);
+    //      }
+    //      // The block elements attached to a command are each rendered and then they replace the
+    //      // '&0', '&1', '&2', '&3'... placeholders that are found within the command's htmlTemplate
+
+    //      // Return the Latex.matrix() object to the main parser so that it knows to render this
+    //      // particular portion of latex in this fashion
+    //      cmd.htmlTemplate = 'Hello';
+    //      return Parser.succeed(cmd);
+    //  })
+    //;
     // When giving invalid LaTeX, ensure that the equation doesn't dissapear
     var unknown =
       regex(/^[\\|_|\^|{]((?!right))/).then(function (a) {
