@@ -1,4 +1,4 @@
-MathEditor Pre-Alpha (See Demo <a href='http://matheditor.webappdemos.com' target='_blank'>Here</a>)
+MathEditor Pre-Alpha (See Demo <a href='https://d1mi81jzu1lvio.cloudfront.net' target='_blank'>Here</a>)
 
 
 This is the development of WYSIWG MathEditor
